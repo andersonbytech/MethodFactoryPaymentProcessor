@@ -44,9 +44,3 @@ Contribuições são sempre bem-vindas! Se você tem sugestões para melhorar es
 sinta-se à vontade para fazer um fork do repositório e enviar um pull request, 
 ou abrir um Issue com as tags "melhoria" ou "bug".
 
-## 📄 Licença
-Distribuído sob a licença MIT. Veja LICENSE para mais informações.
-
-
-Este `README.md` oferece todas as informações necessárias para que qualquer pessoa interessada possa entender, configurar, usar e contribuir para o projeto.
-
