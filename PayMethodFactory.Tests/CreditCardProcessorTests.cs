@@ -6,9 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Moq;
-
-
-
+using MethodFactoryPaymentProcessor.PaymentProcessors;
 
 namespace PayMethodFactory.Tests
 {
