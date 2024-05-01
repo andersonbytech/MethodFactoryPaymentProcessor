@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodFactoryPaymentProcessor", "src\MethodFactoryPaymentProcessor\MethodFactoryPaymentProcessor.csproj", "{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - src", "1 - src", "{0C722629-47D2-47A5-BEB3-E92FA11DFFF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - tests", "0 - tests", "{DF7BF056-6DC0-484C-B41D-0E27EA4360D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87} = {0C722629-47D2-47A5-BEB3-E92FA11DFFF1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DEA8582-03D6-4BB5-AC77-9749FC1121AE}
