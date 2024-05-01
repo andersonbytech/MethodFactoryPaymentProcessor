@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodFactoryPaymentProcessor", "src\MethodFactoryPaymentProcessor\MethodFactoryPaymentProcessor.csproj", "{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MethodFactoryPaymentProcessor", "src\MethodFactoryPaymentProcessor\MethodFactoryPaymentProcessor.csproj", "{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - src", "1 - src", "{0C722629-47D2-47A5-BEB3-E92FA11DFFF1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - tests", "0 - tests", "{DF7BF056-6DC0-484C-B41D-0E27EA4360D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayMethodFactory.Tests", "PayMethodFactory.Tests\PayMethodFactory.Tests.csproj", "{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87} = {AA9A52AD-1D9D-4D19-82CC-64197E30FE87}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +24,17 @@ Global
 		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AA9A52AD-1D9D-4D19-82CC-64197E30FE87} = {0C722629-47D2-47A5-BEB3-E92FA11DFFF1}
+		{4B97E4EB-BA20-4C52-A0B9-90C9DEFEFFBE} = {DF7BF056-6DC0-484C-B41D-0E27EA4360D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DEA8582-03D6-4BB5-AC77-9749FC1121AE}
