@@ -10,20 +10,21 @@ namespace MethodFactoryPaymentProcessor.Factories
 {
     public class PaymentProcessorFactory
     {
-        public static IPaymentProcessor GetPaymentProcessor(string paymentType)
+        public static IPaymentProcessor GetPaymentProcessor(string paymentType, IOutputService outputService)
         {
             switch (paymentType.ToLower())
             {
                 case "creditcard":
-                    return new CreditCardProcessor();
+                    return new CreditCardProcessor(outputService);
                 case "paypal":
-                    return new PayPalProcessor();
+                    return new PayPalProcessor(outputService);
                 case "banktransfer":
-                    return new BankTransferProcessor();
+                    return new BankTransferProcessor(outputService);
                 default:
                     throw new ArgumentException("Invalid payment type");
             }
         }
     }
+
 
 }

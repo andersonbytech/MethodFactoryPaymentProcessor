@@ -9,9 +9,16 @@ namespace MethodFactoryPaymentProcessor.PaymentProcessors
 {
     public class CreditCardProcessor : IPaymentProcessor
     {
+        private readonly IOutputService _outputService;
+
+        public CreditCardProcessor(IOutputService outputService)
+        {
+            _outputService = outputService;
+        }
+
         public void ProcessPayment(decimal amount)
         {
-            Console.WriteLine($"Processing a credit card payment of ${amount}");
+            _outputService.Write($"Processing a credit card payment of ${amount}");
         }
     }
 

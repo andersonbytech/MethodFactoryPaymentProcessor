@@ -9,9 +9,16 @@ namespace MethodFactoryPaymentProcessor.PaymentProcessors
 {
     public class PayPalProcessor : IPaymentProcessor
     {
+        private readonly IOutputService _outputService;
+
+        public PayPalProcessor(IOutputService outputService)
+        {
+            _outputService = outputService;
+        }
+
         public void ProcessPayment(decimal amount)
         {
-            Console.WriteLine($"Processing a PayPal payment of ${amount}");
+            _outputService.Write($"Processing a PayPal payment of ${amount}");
         }
     }
 

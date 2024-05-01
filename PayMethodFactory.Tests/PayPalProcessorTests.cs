@@ -7,25 +7,33 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Moq;
+using MethodFactoryPaymentProcessor.Interfaces;
 
 namespace PayMethodFactory.Tests
 {
     public class PayPalProcessorTests
     {
+        private readonly Mock<IOutputService> _outputServiceMock;
+        private readonly PayPalProcessor _processor;
+
+        public PayPalProcessorTests()
+        {
+            _outputServiceMock = new Mock<IOutputService>();
+            _processor = new PayPalProcessor(_outputServiceMock.Object);
+        }
+
         [Fact]
         public void ProcessPayment_WithValidAmount_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var processor = new PayPalProcessor();
-            var output = new StringWriter();
-            Console.SetOut(output);
+            var amount = 150m;
+            var expectedMessage = $"Processing a PayPal payment of ${amount}";
 
             // Act
-            processor.ProcessPayment(100m);
+            _processor.ProcessPayment(amount);
 
             // Assert
-            var expected = "Processing a PayPal payment of $100\r\n";
-            Assert.Equal(expected, output.ToString());
+            _outputServiceMock.Verify(service => service.Write(expectedMessage), Times.Once());
         }
     }
 }

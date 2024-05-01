@@ -7,27 +7,39 @@ using System.Threading.Tasks;
 using Xunit;
 using Moq;
 using MethodFactoryPaymentProcessor.PaymentProcessors;
+using MethodFactoryPaymentProcessor.Interfaces;
 
 namespace PayMethodFactory.Tests
 {
     public class BankTransferProcessorTests
     {
+
+        private readonly Mock<IOutputService> _outputServiceMock;
+        private readonly BankTransferProcessor _processor;
+
+        public BankTransferProcessorTests()
+        {
+            _outputServiceMock = new Mock<IOutputService>();
+            _processor = new BankTransferProcessor(_outputServiceMock.Object);
+        }
+
         [Fact]
         public void ProcessPayment_WithValidAmount_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var processor = new BankTransferProcessor();
-            var output = new StringWriter();
-            Console.SetOut(output);
+            var amount = 150m;
+            var expectedMessage = $"Processing a bank transfer payment of ${amount}";
 
             // Act
-            processor.ProcessPayment(100m);
+            _processor.ProcessPayment(amount);
 
             // Assert
-            var expected = "Processing a Bank Transfer payment of $100\r\n";
-            Assert.Equal(expected, output.ToString());
+            _outputServiceMock.Verify(service => service.Write(expectedMessage), Times.Once());
         }
     }
+
+
+
 }
 
 

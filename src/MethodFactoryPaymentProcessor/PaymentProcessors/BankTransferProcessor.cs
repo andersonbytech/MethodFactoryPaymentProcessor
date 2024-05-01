@@ -9,9 +9,16 @@ namespace MethodFactoryPaymentProcessor.PaymentProcessors
 {
     public class BankTransferProcessor : IPaymentProcessor
     {
+        private readonly IOutputService _outputService;
+
+        public BankTransferProcessor(IOutputService outputService)
+        {
+            _outputService = outputService;
+        }
+
         public void ProcessPayment(decimal amount)
         {
-            Console.WriteLine($"Processing a bank transfer payment of ${amount}");
+            _outputService.Write($"Processing a bank transfer payment of ${amount}");
         }
     }
 
